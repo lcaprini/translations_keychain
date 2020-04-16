@@ -5,7 +5,7 @@ targets:
         enabled: true
         options:
           path: assets/langs
-          output: lib/src
+          output: lib/i18n
           class_name: Translations
 
 builders:

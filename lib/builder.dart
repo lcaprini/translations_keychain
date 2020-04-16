@@ -4,7 +4,7 @@ import 'package:build/build.dart';
 import 'package:i18n_generator/src/i18n_generator.dart';
 
 const String _defaultPath = 'assets/langs';
-const String _defaultOutput = 'lib/src';
+const String _defaultOutput = 'lib/i18n';
 const String _defaultClassName = 'Translations';
 
 /// Configuration object for builder
