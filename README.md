@@ -9,7 +9,7 @@ When `i18n_generator` is running in watch mode, you could simply edit your JSON 
 - [x] Merges all JSON keys in one single file
 - [x] Supports for nested JSON objects for grouped labels
 - [x] Sorts the final class properties
-- [ ] Use UpperCamelCase for class name and snake_case for file name
+- [x] Use UpperCamelCase for class name and snake_case for file name
 
 ## Getting Started
 

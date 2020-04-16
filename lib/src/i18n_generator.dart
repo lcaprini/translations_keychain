@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:basic_utils/basic_utils.dart';
 import 'package:glob/glob.dart';
 import 'package:build/build.dart';
 import 'package:path/path.dart' as p;
@@ -34,7 +35,7 @@ class I18nGenerator implements Builder {
       final expandedTranslations = _extractTranslations(translations);
 
       // Converts the Map into a static class
-      final dartFileAsString = _createTranslationFile(expandedTranslations);
+      final dartFileAsString = _buildTranslationsFile(expandedTranslations);
 
       // Writes the dart file into project
       final outputFile = _getOutputFile(buildStep);
@@ -68,7 +69,7 @@ class I18nGenerator implements Builder {
     return extracted;
   }
 
-  String _createTranslationFile(Map<String, dynamic> translations) {
+  String _buildTranslationsFile(Map<String, dynamic> translations) {
     String file = '''
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
@@ -76,7 +77,7 @@ class I18nGenerator implements Builder {
 // I18nGenerator
 // **************************************************************************
 
-abstract class Translations {
+abstract class ${config.className} {
 ''';
     final sortedKeys = translations.keys.toList()..sort();
 
@@ -95,7 +96,7 @@ abstract class Translations {
   ) {
     return AssetId(
       buildStep.inputId.package,
-      p.join(config.output, '${config.className}.dart'),
+      p.join(config.output, '${config.fileName}.dart'),
     );
   }
 
@@ -108,6 +109,6 @@ abstract class Translations {
 
   @override
   Map<String, List<String>> get buildExtensions => {
-        r'$package$': ['${config.output}/${config.className}.dart'],
+        r'$package$': ['${config.output}/${config.fileName}.dart']
       };
 }
