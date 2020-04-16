@@ -7,7 +7,7 @@ import 'src/keychain_generator.dart';
 
 const String _defaultPath = 'assets/langs';
 const String _defaultOutput = 'lib/i18n';
-const String _defaultClassName = 'Translations';
+const String _defaultClassName = 'TranslationsKeychain';
 
 /// Configuration object for builder
 class KeychainConfig {
