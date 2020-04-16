@@ -1,0 +1,7 @@
+{
+    "HELLO": "Hi!",
+    "ERROR": {
+        "WRONG_USERNAME": "Wrong username",
+        "WRONG_PASSWORD": "Wrong password"
+    }
+}
