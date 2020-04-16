@@ -1,7 +1,6 @@
 name: i18n_generator
 description: A Dart builder to convert the JSON translation files into an abstract class for label suggestions.
 version: 0.0.1
-author: Luca Caprini <luca.caprini@gmail.com>
 homepage: https://github.com/lcaprini/i18n_generator
 issue_tracker: https://github.com/lcaprini/i18n_generator/issues
 
@@ -10,8 +9,9 @@ environment:
 
 dependencies:
   build: ^1.2.2
-  path:
+  path: ^1.7.0
   basic_utils: ^2.5.3
+  glob: ^1.2.0
 
 dev_dependencies:
   build_config: ^0.4.2
