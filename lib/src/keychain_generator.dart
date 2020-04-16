@@ -19,7 +19,7 @@ class KeychainGenerator implements Builder {
     BuildStep buildStep,
   ) async {
     try {
-      Glob _allTranslationsFiles = _getAllTranslationFiles(config);
+      final Glob _allTranslationsFiles = _getAllTranslationFiles(config);
 
       final Map<String, dynamic> translations = {};
 
@@ -28,7 +28,7 @@ class KeychainGenerator implements Builder {
         final String file = await buildStep.readAsString(input);
 
         // Adds the translations to the list
-        translations..addAll(json.decode(file));
+        translations.addAll(json.decode(file));
       }
       // Expands the Map into one level Map
       final expandedTranslations = _extractTranslations(translations);
@@ -61,7 +61,8 @@ class KeychainGenerator implements Builder {
 
       // Extracts the translations from inner JSON
       else if (value is Map) {
-        final expandedTranslations = _extractTranslations(value, prefix: newPrefix);
+        final expandedTranslations =
+            _extractTranslations(value, prefix: newPrefix);
         extracted.addAll(expandedTranslations);
       }
     });
@@ -80,9 +81,9 @@ abstract class ${config.className} {
 ''';
     final sortedKeys = translations.keys.toList()..sort();
 
-    sortedKeys.forEach((key) {
+    for (final key in sortedKeys) {
       file += '  static const $key = \'${translations[key]}\';\n';
-    });
+    }
 
     file += '}\n';
 

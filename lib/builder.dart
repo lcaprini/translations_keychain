@@ -28,7 +28,7 @@ class KeychainConfig {
     this.output = _defaultOutput,
     className = _defaultClassName,
   }) {
-    this.className = className.replaceAll(new RegExp(r'\s\b|\b\s'), '');
+    this.className = className.replaceAll(RegExp(r'\s\b|\b\s'), '');
     fileName = StringUtils.camelCaseToLowerUnderscore(this.className);
   }
 
@@ -43,6 +43,6 @@ Builder keychainGenerator(BuilderOptions options) {
   try {
     return KeychainGenerator(config: KeychainConfig.fromJson(options.config));
   } catch (e) {
-    throw e;
+    rethrow;
   }
 }
