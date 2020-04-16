@@ -3,5 +3,6 @@
     "ERROR": {
         "WRONG_USERNAME": "Wrong username",
         "WRONG_PASSWORD": "Wrong password"
-    }
+    },
+    "OTHER_LABEL": "Only in english"
 }

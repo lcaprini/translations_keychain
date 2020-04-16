@@ -26,7 +26,6 @@ class I18nGenerator implements Builder {
       await for (final input in buildStep.findAssets(_allTranslationsFiles)) {
         // Reads original translation file as String
         final String file = await buildStep.readAsString(input);
-        print(file);
 
         // Adds the translations to the list
         translations..addAll(json.decode(file));
