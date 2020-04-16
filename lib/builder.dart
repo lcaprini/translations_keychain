@@ -1,15 +1,16 @@
-library i18n_generator;
+library translations_keychain;
 
 import 'package:basic_utils/basic_utils.dart';
 import 'package:build/build.dart';
-import 'package:i18n_generator/src/i18n_generator.dart';
+
+import 'src/keychain_generator.dart';
 
 const String _defaultPath = 'assets/langs';
 const String _defaultOutput = 'lib/i18n';
 const String _defaultClassName = 'Translations';
 
 /// Configuration object for builder
-class I18nGeneratorConfig {
+class KeychainConfig {
   /// Folder which contains all JSON translations
   final String path;
 
@@ -22,7 +23,7 @@ class I18nGeneratorConfig {
   /// File name for the final class
   String fileName;
 
-  I18nGeneratorConfig({
+  KeychainConfig({
     this.path = _defaultPath,
     this.output = _defaultOutput,
     className = _defaultClassName,
@@ -31,16 +32,16 @@ class I18nGeneratorConfig {
     fileName = StringUtils.camelCaseToLowerUnderscore(this.className);
   }
 
-  factory I18nGeneratorConfig.fromJson(Map<String, dynamic> json) => I18nGeneratorConfig(
+  factory KeychainConfig.fromJson(Map<String, dynamic> json) => KeychainConfig(
         path: json['path'] ??= _defaultPath,
         output: json['output'] ??= _defaultOutput,
         className: json['class_name'] ??= _defaultClassName,
       );
 }
 
-Builder i18nGenerator(BuilderOptions options) {
+Builder keychainGenerator(BuilderOptions options) {
   try {
-    return I18nGenerator(config: I18nGeneratorConfig.fromJson(options.config));
+    return KeychainGenerator(config: KeychainConfig.fromJson(options.config));
   } catch (e) {
     throw e;
   }

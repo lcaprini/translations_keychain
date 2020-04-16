@@ -1,8 +1,8 @@
-# i18n_generator
+# translations_keychain
 
-`i18n_generator` is a small Dart builder that converts the local JSON files used for translations into a Dart abstract class.
+`translations_keychain` is a small Dart builder that converts the local JSON files used for translations into a Dart abstract class.
 
-When `i18n_generator` is running in watch mode, you could simply edit your JSON file and the abstract class will be automatically updated.
+When `translations_keychain` is running in watch mode, you could simply edit your JSON file and the abstract class will be automatically updated.
 
 ### Features
 
@@ -20,17 +20,18 @@ Add this to your package's pubspec.yaml file:
 ```yaml
 dev_dependencies:
   # stable version install from https://pub.dev/packages
-  i18n_generator: <last_version>
+  translations_keychain: <last_version>
   build_runner: ^1.8.1
 
   # Dev version install from git REPO
-  i18n_generator:
-    git: https://github.com/lcaprini/i18n_generator.git
+  translations_keychain:
+    git: https://github.com/lcaprini/translations_keychain.git
 ```
 
 ### Configure
 
-By default `i18n_generator` scans every JSON file into the `/assets/langs` directory and generates the `translations.dart` file into `/lib/i18n` directory.
+By default `translations_keychain` scans every JSON file into the `/assets/langs` directory and generates the `translations_keychain.dart` file into `/lib/i18n`
+directory.
 
 If you want to change the default behaviour you could create or update the `build.yaml` file of your project with:
 
@@ -38,7 +39,7 @@ If you want to change the default behaviour you could create or update the `buil
 targets:
   $default:
     builders:
-      i18n_generator:
+      translations_keychain:
         options:
           path: <langs_assets_directory>
           output: <output_directory>
@@ -96,16 +97,16 @@ assets/langs/en.json
 }
 ```
 
-became the `translations.dart` file in `/lib/i18n`
+became the `translations_keychain.dart` file in `/lib/i18n`
 
 ```dart
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// I18nGenerator
+// TranslationsKeychain
 // **************************************************************************
 
-abstract class Translations {
+abstract class TranslationsKeychain {
   static const ERROR_WRONG_PASSWORD = 'ERROR.WRONG_PASSWORD';
   static const ERROR_WRONG_USERNAME = 'ERROR.WRONG_USERNAME';
   static const HELLO = 'HELLO';

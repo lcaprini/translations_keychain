@@ -1,10 +1,10 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// I18nGenerator
+// Translations Keychain Generator
 // **************************************************************************
 
-abstract class Translations {
+abstract class TranslationsKeychain {
   static const ERROR_WRONG_PASSWORD = 'ERROR.WRONG_PASSWORD';
   static const ERROR_WRONG_USERNAME = 'ERROR.WRONG_USERNAME';
   static const HELLO = 'HELLO';

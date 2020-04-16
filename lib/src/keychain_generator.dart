@@ -1,17 +1,16 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'package:basic_utils/basic_utils.dart';
 import 'package:glob/glob.dart';
 import 'package:build/build.dart';
 import 'package:path/path.dart' as p;
 
 import '../builder.dart';
 
-class I18nGenerator implements Builder {
-  final I18nGeneratorConfig config;
+class KeychainGenerator implements Builder {
+  final KeychainConfig config;
 
-  I18nGenerator({
+  KeychainGenerator({
     this.config,
   });
 
@@ -74,7 +73,7 @@ class I18nGenerator implements Builder {
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// I18nGenerator
+// Translations Keychain Generator
 // **************************************************************************
 
 abstract class ${config.className} {
@@ -102,7 +101,7 @@ abstract class ${config.className} {
 
   /// Reads all JSON file into [config.path]
   Glob _getAllTranslationFiles(
-    I18nGeneratorConfig config,
+    KeychainConfig config,
   ) {
     return Glob('${config.path}/**.json');
   }

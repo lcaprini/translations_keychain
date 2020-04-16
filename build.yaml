@@ -1,17 +1,17 @@
 targets:
   $default:
     builders:
-      i18n_generator:
+      translations_keychain:
         enabled: true
         options:
           path: assets/langs
           output: lib/i18n
-          class_name: Translations
+          class_name: TranslationsKeychain
 
 builders:
-  i18n_generator:
-    import: "package:i18n_generator/builder.dart"
-    builder_factories: ["i18nGenerator"]
+  translations_keychain:
+    import: "package:translations_keychain/builder.dart"
+    builder_factories: ["keychainGenerator"]
     build_extensions: { ".json": [".dart"] }
     auto_apply: dependents
     build_to: source
