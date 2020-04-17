@@ -5,7 +5,7 @@ import 'package:glob/glob.dart';
 import 'package:build/build.dart';
 import 'package:path/path.dart' as p;
 
-import '../builder.dart';
+import '../translations_keychain.dart';
 
 class KeychainGenerator implements Builder {
   final KeychainConfig config;
@@ -61,8 +61,7 @@ class KeychainGenerator implements Builder {
 
       // Extracts the translations from inner JSON
       else if (value is Map) {
-        final expandedTranslations =
-            _extractTranslations(value, prefix: newPrefix);
+        final expandedTranslations = _extractTranslations(value, prefix: newPrefix);
         extracted.addAll(expandedTranslations);
       }
     });

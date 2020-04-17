@@ -10,7 +10,7 @@ targets:
 
 builders:
   translations_keychain:
-    import: "package:translations_keychain/builder.dart"
+    import: "package:translations_keychain/translations_keychain.dart"
     builder_factories: ["keychainGenerator"]
     build_extensions: { ".json": [".dart"] }
     auto_apply: dependents
