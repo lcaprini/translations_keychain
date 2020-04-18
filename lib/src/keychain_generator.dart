@@ -55,19 +55,33 @@ class KeychainGenerator implements Builder {
       final newPrefix = List<String>.from(prefix)..add(key);
 
       // Writes the final key and value for translation
-      if (value is String) {
-        extracted[newPrefix.join('_')] = newPrefix.join('.');
-      }
+      final finalKey = _buildPropertyName(newPrefix);
+      extracted[finalKey] = newPrefix.join('.');
 
       // Extracts the translations from inner JSON
-      else if (value is Map) {
+      if (value is Map) {
         final expandedTranslations = _extractTranslations(value, prefix: newPrefix);
+
         extracted.addAll(expandedTranslations);
       }
     });
     return extracted;
   }
 
+  /// Create the final property name
+  String _buildPropertyName(List<String> prefix) {
+    // Replace all symbols with underscore
+    final prefixKeys = prefix.map((p) => p.replaceAll(RegExp(r'[^\w]'), '_')).toList();
+    try {
+      // If the first char of key is a number, add A_ prefix
+      int.parse(prefixKeys[0][0]);
+      prefixKeys[0] = 'A_${prefixKeys[0]}';
+    } catch (e) {}
+    // Join all prefix in one string
+    return prefixKeys.join('_');
+  }
+
+  /// Create the final abstract class text
   String _buildTranslationsFile(Map<String, dynamic> translations) {
     String file = '''
 // GENERATED CODE - DO NOT MODIFY BY HAND

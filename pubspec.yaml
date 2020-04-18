@@ -1,6 +1,6 @@
 name: translations_keychain
 description: A Dart builder to convert the JSON translation files into an abstract class for label suggestions.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/lcaprini/translations_keychain
 issue_tracker: https://github.com/lcaprini/translations_keychain/issues
 
