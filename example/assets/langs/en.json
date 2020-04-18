@@ -1,8 +1,19 @@
 {
+    "123": "Numeric label",
+    "CLICKED": {
+        "zero": "You clicked {} times!",
+        "one": "You clicked {} time!",
+        "two": "You clicked {} times!",
+        "few": "You clicked {} times!",
+        "many": "You clicked {} times!",
+        "other": "You clicked {} times!"
+    },
     "HELLO": "Hi!",
     "ERROR": {
         "WRONG_USERNAME": "Wrong username",
         "WRONG_PASSWORD": "Wrong password"
     },
+    "LABEL.WITH:SYMBOLS": "Label with symbols",
+    "LABEL WITH SPACES": "Label with spaces",
     "OTHER_LABEL": "Only in english"
 }

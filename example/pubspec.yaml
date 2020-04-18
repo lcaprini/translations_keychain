@@ -6,4 +6,5 @@ environment:
 
 dev_dependencies:
   build_runner: ^1.8.1
-  translations_keychain: ^0.0.2
+  translations_keychain:
+    path: ../

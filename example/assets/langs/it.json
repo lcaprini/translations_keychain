@@ -1,7 +1,18 @@
 {
+    "123": "Etichetta numerica",
+    "CLICKED": {
+        "zero": "Hai cliccato {} volta!",
+        "one": "Hai cliccato {} volte!",
+        "two": "Hai cliccato {} volte!",
+        "few": "Hai cliccato {} volte!",
+        "many": "Hai cliccato {} volte!",
+        "other": "Hai cliccato {} volte!"
+    },
     "HELLO": "Ciao!",
     "ERROR": {
         "WRONG_USERNAME": "Username errato",
         "WRONG_PASSWORD": "Password errata"
-    }
+    },
+    "LABEL.WITH:SYMBOLS": "Etichetta con simboli",
+    "LABEL WITH SPACES": "Etichetta con spazi"
 }
